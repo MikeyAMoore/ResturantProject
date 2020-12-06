@@ -1,0 +1,617 @@
+@import url('https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap');
+
+/*Common Styles*/
+.container {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-family: 'Freckle Face', cursive;
+    font-weight: 400;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.section-heading {
+    font-size: 12rem;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 0.5rem;
+    text-shadow: 0.3rem 0.3rem 0.3rem #000;
+}
+  /* End of Default Style */
+/*end of common styles*/
+
+/* Navbar */
+#dropmenu {
+  background: #4cb6ea;
+  margin: 0;
+  width: auto;
+  padding: 0;
+  line-height: 1;
+  display: block;
+  position: relative;
+  font-family: 'Freckle Face', sans-serif;
+}
+
+#dropmenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+#dropmenu ul:after,
+#dropmenu:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+#dropmenu ul li {
+  margin: 0;
+  padding: 0;
+  display: block;
+  position: relative;
+}
+#dropmenu ul li a {
+  text-decoration: underline;
+  display: block;
+  margin: 0;
+  -webkit-transition: color .2s ease;
+  -moz-transition: color .2s ease;
+  -ms-transition: color .2s ease;
+  -o-transition: color .2s ease;
+  transition: color .2s ease;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#dropmenu ul li ul {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+}
+#dropmenu ul li ul li {
+  max-height: 0;
+  position: absolute;
+  -webkit-transition: max-height 0.4s ease-out;
+  -moz-transition: max-height 0.4s ease-out;
+  -ms-transition: max-height 0.4s ease-out;
+  -o-transition: max-height 0.4s ease-out;
+  transition: max-height 0.4s ease-out;
+  background: #130e61;
+}
+#dropmenu ul li ul li.has-sub:after {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+  background: #000000;
+  z-index: 1;
+  top: 13px;
+  right: 15px;
+}
+#dropmenu.align-right ul li ul li.has-sub:after {
+  right: auto;
+  left: 15px;
+}
+#dropmenu ul li ul li.has-sub:before {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 0;
+  width: 0;
+  border: 3px solid transparent;
+  border-left-color: #F76C5E;
+  z-index: 2;
+  top: 15px;
+  right: 15px;
+}
+#dropmenu.align-right ul li ul li.has-sub:before {
+  right: auto;
+  left: 15px;
+  border-left-color: transparent;
+  border-right-color: #f756f7;
+}
+#dropmenu ul li ul li a {
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: none;
+  color: #f76c5e;
+  letter-spacing: 0;
+  display: block;
+  width: 170px;
+  padding: 11px 10px 11px 20px;
+}
+#dropmenu ul li ul li:hover > a,
+#dropmenu ul li ul li.active > a {
+  color: #ffffff;
+}
+#dropmenu ul li ul li:hover:after,
+#dropmenu ul li ul li.active:after {
+  background: #0ffff0;
+}
+#dropmenu ul li ul li:hover > ul {
+  left: 100%;
+  top: 0;
+}
+#dropmenu ul li ul li:hover > ul > li {
+  max-height: 72px;
+  position: relative;
+}
+#dropmenu > ul > li {
+  float: left;
+}
+#dropmenu.align-center > ul > li {
+  float: none;
+  display: inline-block;
+}
+#dropmenu.align-center > ul {
+  text-align: center;
+}
+#dropmenu.align-center ul ul {
+  text-align: left;
+}
+#dropmenu.align-right > ul {
+  float: right;
+}
+#dropmenu.align-right > ul > li:hover > ul {
+  left: auto;
+  right: 0;
+}
+#dropmenu.align-right ul ul li:hover > ul {
+  right: 100%;
+  left: auto;
+}
+#dropmenu.align-right ul ul li a {
+  text-align: right;
+}
+#dropmenu > ul > li:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  top: 0;
+  z-index: 0;
+  background: #4a4277;
+  -webkit-transition: height .2s;
+  -moz-transition: height .2s;
+  -ms-transition: height .2s;
+  -o-transition: height .2s;
+  transition: height .2s;
+}
+#dropmenu > ul > li.has-sub > a {
+  padding-right: 40px;
+}
+#dropmenu > ul > li.has-sub > a:after {
+  display: block;
+  content: "";
+  background: #f756f7;
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  border-radius: 13px;
+  right: 14px;
+  top: 16px;
+}
+#dropmenu > ul > li.has-sub > a:before {
+  display: block;
+  content: "";
+  border: 4px solid transparent;
+  border-top-color: #000000;
+  z-index: 2;
+  height: 0;
+  width: 0;
+  position: absolute;
+  right: 16px;
+  top: 21px;
+}
+#dropmenu > ul > li > a {
+  color: #f76c5e;
+  padding: 15px 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 14px;
+  z-index: 2;
+  position: relative;
+}
+#dropmenu > ul > li:hover:after,
+#dropmenu > ul > li.active:after {
+  height: 100%;
+}
+#dropmenu > ul > li:hover > a,
+#dropmenu > ul > li.active > a {
+  color: #f76c5e;
+}
+#dropmenu > ul > li:hover > a:after,
+#dropmenu > ul > li.active > a:after {
+  background: #f76c5e;
+}
+#dropmenu > ul > li:hover > a:before,
+#dropmenu > ul > li.active > a:before {
+  border-top-color: #000000;
+}
+#dropmenu > ul > li:hover > ul {
+  left: 0;
+}
+#dropmenu > ul > li:hover > ul > li {
+  max-height: 72px;
+  position: relative;
+}
+#dropmenu #menu-button {
+  display: none;
+}
+#dropmenu > ul > li > a {
+  display: block;
+}
+#dropmenu > ul > li {
+  width: auto;
+}
+#dropmenu > ul > li > ul {
+  width: 170px;
+  display: block;
+}
+#dropmenu > ul > li > ul > li {
+  width: 170px;
+  display: block;
+}
+@media all and (max-width: 800px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+  #dropmenu > ul {
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 0.35s ease-out;
+    -moz-transition: max-height 0.35s ease-out;
+    -ms-transition: max-height 0.35s ease-out;
+    -o-transition: max-height 0.35s ease-out;
+    transition: max-height 0.35s ease-out;
+  }
+  #dropmenu > ul > li > ul {
+    width: 100%;
+    display: block;
+  }
+  #dropmenu.align-right ul li a {
+    text-align: left;
+  }
+  #dropmenu > ul > li > ul > li {
+    width: 100%;
+    display: block;
+  }
+  #dropmenu.align-right ul ul li a {
+    text-align: left;
+  }
+  #dropmenu > ul > li > ul > li > a {
+    width: 100%;
+    display: block;
+  }
+  #dropmenu ul li ul li a {
+    width: 100%;
+  }
+  #dropmenu.align-center > ul {
+    text-align: left;
+  }
+  #dropmenu.align-center > ul > li {
+    display: block;
+  }
+  #dropmenu > ul.open {
+    max-height: 1000px;
+    border-top: 1px solid rgba(110, 110, 110, 0.25);
+  }
+  #dropmenu ul {
+    width: 100%;
+  }
+  #dropmenu ul > li {
+    float: none;
+    width: 100%;
+  }
+  #dropmenu ul li a {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px 20px;
+  }
+  #dropmenu ul > li:after {
+    display: none;
+  }
+  #dropmenu ul li.has-sub > a:after,
+  #dropmenu ul li.has-sub > a:before,
+  #dropmenu ul li ul li.has-sub:after,
+  #dropmenu ul li ul li.has-sub:before {
+    display: none;
+  }
+  #dropmenu ul li ul,
+  #dropmenu ul li ul li ul,
+  #dropmenu ul li ul li:hover > ul,
+  #dropmenu.align-right ul li ul,
+  #dropmenu.align-right ul li ul li ul,
+  #dropmenu.align-right ul li ul li:hover > ul {
+    left: 0;
+    position: relative;
+    right: auto;
+  }
+  #dropmenu ul li ul li,
+  #dropmenu ul li:hover > ul > li {
+    max-height: 999px;
+    position: relative;
+    background: none;
+  }
+  #dropmenu ul li ul li a {
+    padding: 8px 20px 8px 35px;
+    color: #F76C5E;
+  }
+  #dropmenu ul li ul ul li a {
+    padding: 8px 20px 8px 50px;
+  }
+  #dropmenu ul li ul li:hover > a {
+    color: #000000;
+  }
+  #dropmenu #menu-button {
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #f76c5e;
+    cursor: pointer;
+  }
+  #dropmenu #menu-button:after {
+    display: block;
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 22px;
+    border-top: 2px solid #f76c5e;
+    border-bottom: 2px solid #f76c5e;
+    right: 20px;
+    top: 16px;
+  }
+  #dropmenu #menu-button:before {
+    display: block;
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 22px;
+    border-top: 2px solid #f76c5e;
+    right: 20px;
+    top: 26px;
+  }
+}
+
+/* End of Navbar */
+
+/*section 1*/
+.section-1 {
+    width:100%;
+    height: 100vh;
+    background-color: #2dc7ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.section-heading {
+    font-size: 12rem;
+    font-weight: 900;
+    color: #eaba6b;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 0.5rem;
+    text-shadow: .3rem .3rem .3rem #ffffff;
+}
+
+.section-1-icons i {
+  font-size: 35rem;
+  color: #f97068;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(0);
+  text-shadow: 0.2rem 0.2rem 0.2rem #000;
+  transition: transform 0.3s;
+}
+
+.section-1-icons i.change {
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.3s 0.3s;
+}
+/*End of section 1*/
+
+/* Section 3 */
+.section-3 {
+    background-color: #d8315b;
+    padding: 5rem 0;
+    font-family: 'Freckle Face', sans-serif;
+  }
+  
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10rem;
+    font-family: 'Freckle Face', sans-serif;
+  }
+  
+  .gallery-link {
+    position: relative;
+    margin: 4rem 1rem;
+  }
+  
+  .gallery-link::before {
+    content: "";
+    position: absolute;
+    top: 2vw;
+    left: 80%;
+    width: 0.2rem;
+    height: 0;
+    background-color: #fff;
+    z-index: 10;
+    transition: height 0.5s;
+  }
+  
+  .gallery-link:hover::before {
+    height: 80%;
+  }
+  
+  .gallery-link::after {
+    content: "";
+    position: absolute;
+    top: 30%;
+    left: 2rem;
+    width: 0;
+    height: 0.2rem;
+    background-color: #fff;
+    transition: width 0.5s;
+  }
+  
+  .gallery-link:hover::after {
+    width: 90%;
+  }
+  
+  .food-img {
+    width: 24vw;
+    height: 15vw;
+    object-fit: cover;
+    box-shadow: 0.3rem 0.3rem 0.1rem #e92929, 0.5rem 0.5rem 0.1rem #a2e946,
+      0.7rem 0.7rem 0.1rem #297ce9, 0.9rem 0.9rem 0.1rem #e92999;
+    transition: all 0.5s;
+  }
+  
+  .gallery-link:hover .food-img {
+    box-shadow: 1rem 1rem 0.1rem #e92929, 2rem 2rem 0.1rem #a2e946,
+      3rem 3rem 0.1rem #297ce9, 4rem 4rem 0.1rem #e92999;
+    filter: blur(0.5rem);
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+  
+  .food-name {
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: #fff;
+    width: 0;
+    overflow: hidden;
+    transition: width 0.3s;
+  }
+  
+  .gallery-link:hover .food-name {
+    width: 100%;
+    transition: width 1.5s 0.5s;
+  }
+  
+  .food-description {
+    position: absolute;
+    bottom: 3vw;
+    left: 2rem;
+    width: 70%;
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+  }
+  
+  .gallery-link:hover .food-description {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s 1s;
+  }
+  /* End of Section 3 */
+
+  /* Section 4 */
+.section-4 {
+  width: 100%;
+  height: 30vh;
+  background-color: #222;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 3rem 0;
+  position: relative;
+  font-family: 'Freckle Face', sans-serif;
+}
+
+.section-4-text {
+  text-transform: uppercase;
+}
+
+.section-4-heading {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #a79a2d;
+}
+
+.section-4-paragraph {
+  font-size: 1.5rem;
+  color: #888;
+}
+
+.signup-form {
+  display: flex;
+  align-items: center;
+}
+
+.signup-form-input {
+  width: 35rem;
+  height: 5rem;
+  padding: 1rem;
+  border: 0.2rem solid #a79a2d;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  color: #a79a2d;
+}
+
+.signup-form-input::placeholder {
+  color: #a79a2d;
+}
+
+.signup-form-btn {
+  position: relative;
+  left: -4.5rem;
+  width: 4rem;
+  height: 4rem;
+  background-color: #333;
+  color: #a79a2d;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 3rem;
+  font-size: 1.7rem;
+  font-weight: 200;
+  color: #eee;
+  letter-spacing: 0.1rem;
+  border-top: 0.1rem solid #888;
+  padding-top: 6rem;
+  width: 100%;
+  text-align: center;
+}
+/* End of Section 4 */
